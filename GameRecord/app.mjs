@@ -142,11 +142,25 @@ function display() {
     OUTPUT_ELEMENT.innerHTML = "";
     for(let i = 0; i < games.length; i++) {
         let containerElement = document.createElement("div");
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.setAttribute("index", i);
+        deleteButton.addEventListener("click", function() {
+            let res = [];
+            for (let j = 0; j < games.length; j++) {
+                if(this.getAttribute("index")!=j) {
+                    res.push(games[j]);
+                }
+            }
+            games = res;
+            display();
+        });
         containerElement.className = "game-entry";
         const keys = Object.keys(games[i]);
         for(let j = 0; j < keys.length; j++) {
             containerElement.appendChild(createEntry(i, keys[j], games[i][keys[j]]));
         }
+        containerElement.appendChild(deleteButton);
         OUTPUT_ELEMENT.appendChild(containerElement);
     }
 }
