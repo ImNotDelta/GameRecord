@@ -12,3 +12,11 @@ html {
 label{
     text-transform: capitalize;
 }
+
+.flex-container {
+    display:flex;
+}
+
+.container {
+    flex:50%;
+}

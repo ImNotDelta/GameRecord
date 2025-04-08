@@ -6,9 +6,42 @@
         <script src="app.mjs" type="module"></script>
     </head>
     <body>
-        <input type="file" id="fileUploader" class="form-control" style="max-width:400px;" />
-        <input id="inputSource" class="form-range" type="range" min="0" max="0" value="0" style="max-width:400px;" />
-        <span id="indexPosition">0 / 0</span>
-        <div id="display"> </div>
+        <div class="flex-container">
+            <div class="container">
+                <input type="file" id="fileUploader" class="form-control" style="max-width:400px;" />
+                <select id="sortOptions">
+                    <option value="players">Players</option>
+                    <option value="rating">Rating</option>
+                    <option value="difficulty">Difficulty</option>
+                    <option value="playCount">playCount</option>
+                </select>
+                <div id="display"> </div>
+            </div>
+            <div class="container">
+                <label>Title:</label><input id="newTitle">
+                <br>
+                <label>Designer:</label><input id="newDesigner">
+                <br>
+                <label>Artist:</label><input id="newArtist">
+                <br>
+                <label>Publisher:</label><input id="newPublisher">
+                <br>
+                <label>Year:</label><input id="newYear">
+                <br>
+                <label>Player:</label><input id="newPlayer">
+                <br>
+                <label>Time:</label><input id="newTime">
+                <br>
+                <label>Difficulty</label><input id="newDifficulty">
+                <br>
+                <label>URL:</label><input id="newURL">
+                <br>
+                <label>Play Count:</label><input id="newPlayCount">
+                <br>
+                <label>Rating:</label><input id="newRating" type="range" min="0" max="10">
+                <br>
+                <button id="add">add</button>
+            </div>
+        </div>
     </body>
 </html>
